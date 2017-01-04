@@ -1,0 +1,5 @@
+
+We updated firmware for MKS Robin hardware Version 1.0 and 2.0.Both are same functions.Just they use different serial COM.
+But the board can't work if flash a wrong firmware.
+So,please check carefully and use the correct firmware for the MKS Robin board .
+
