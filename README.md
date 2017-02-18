@@ -31,5 +31,6 @@ Robin V1.0.1
 Robin V1.0.2
 
 1.Aviailble to enable PID,improved better stability of temperature .
+
 2.Fixed temperature alarm problem during printing.
 
