@@ -1,5 +1,5 @@
-# MKS-Robin
-MKS -Robin Firmware version description
+# MKS Robin
+MKS Robin Firmware version description
 
 
 Robin V1.0.0
