@@ -1,1 +1,18 @@
+# Mks-Robin Lite
+Mks-Lite Firmware version description
 
+Mks-Robin Lite V0.01
+
+     Initial version
+     
+1.Firmware options
+
+Mks-Robin Lite: Robin_Lite.bin
+
+2.Mks-Robin Lite V0.04 function description
+
+  2.1.Control chip: 32-bit ARM
+  2.2.External WIFI module for cloud printing
+  2.3.Multi-language:Chinese;English
+  2.4.Continue printing after power off
+  2.5.Dislay:LCD
