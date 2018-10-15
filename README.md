@@ -34,7 +34,7 @@ Robin V1.0.2
 
 2.Fixed temperature alarm problem during printing.
 
-# Robin Nano
+# MKS Robin Nano
 Mks-Robin Nano Firmware version description
 
 Mks-Robin Nano V1.0.0
