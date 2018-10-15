@@ -1,1 +1,18 @@
+# Mks-Robin Nano
+Mks-Robin Nano Firmware version description
 
+Mks-Robin Nano V1.0.0
+
+     Initial version
+     
+1.Firmware options
+
+Mks-Robin Nano: Robin_nano.bin
+
+2.Mks-Robin Nano V1.0.0 function description
+
+  2.1.Control chip: 32-bit ARM
+  2.2.External WIFI module for cloud printing
+  2.3.Multi-language:Chinese;English;Russian;Spanish;French;Italian
+  2.4.Continue printing after power off
+  
