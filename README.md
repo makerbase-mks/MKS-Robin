@@ -34,22 +34,30 @@ Robin V1.0.2
 
 2.Fixed temperature alarm problem during printing.
 
+Robin V2.0.7
+
+1.Release version
+
+# MKS Robin Mini
+
+Mks-Robin Mini Firmware version description
+
+Robin Mini V1.0.0
+
+1.Initial version
+
+Robin Mini V2.0.7
+
+1.Release version
+
+
 # MKS Robin Nano
-Mks-Robin Nano Firmware version description
 
-Mks-Robin Nano V1.0.0
+Robin Nano Firmware version description
 
-     Initial version
-     
-1.Firmware options
+Robin Nano V1.0.0
 
-Mks-Robin Nano: Robin_nano.bin
-
-2.Mks-Robin Nano V1.0.0 function description
-
-  2.1.Control chip: 32-bit ARM
-  2.2.External WIFI module for cloud printing
-  2.3.Multi-language:Chinese;English;Russian;Spanish;French;Italian
-  2.4.Continue printing after power off
+1.Initial version
+ 
   
   
