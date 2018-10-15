@@ -50,6 +50,16 @@ Robin Mini V2.0.7
 
 1.Release version
 
+# Mks-Robin Lite
+Robin Lite Firmware version description
+
+Robin Lite V0.0.1
+
+1.Initial version
+     
+Robin Lite V0.04
+
+1.Release version
 
 # MKS Robin Nano
 
