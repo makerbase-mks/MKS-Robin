@@ -16,3 +16,8 @@ Mks-Robin Nano: Robin_nano.bin
   2.3.Multi-language:Chinese;English;Russian;Spanish;French;Italian
   2.4.Continue printing after power off
   2.5.Dislay:TFT
+  
+Mks-Robin Nano V1.0.1
+  1.Fixed a bug that the target temperature became zero after change filament return during printing.
+  2.Fixed bug that steper driver of 8825 could not be used normally.
+  3.Added configuration item for Inverting Stepper Enable Pins of XYZE axis.
