@@ -68,6 +68,14 @@ Robin Nano Firmware version description
 Robin Nano V1.0.0
 
 1.Initial version
+
+# MKS Robin2
+
+Robin2 Firmware version description
+
+Robin2 V1.0.0
+
+1.Initial version
  
   
   
