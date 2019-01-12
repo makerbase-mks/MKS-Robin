@@ -76,6 +76,12 @@ Robin2 Firmware version description
 Robin2 V1.0.0
 
 1.Initial version
+
+Robin2 V1.0.0
+
+1.Modify the function of quick pause and quick stop.
+2.Fixed a bug that caused the power to hang after the automatic leveling.
+3.Increase the close motor button in the zero return interface under the classic interface.
  
   
   
