@@ -1,4 +1,20 @@
 
-1.Modify the function of quick pause and quick stop.
-2.Fixed a bug that caused the power to hang after the automatic leveling.
-3.Increase the close motor button in the zero return interface under the classic interface.
+1、According to the content that needs to be updated, copy the following file to the SD card:
+
+ (1)、update the config file：robin2_cfg.txt
+ (2)、update images：         mks_pic
+ (3)、update font：           mks_font
+ (4)、update Robin firmware：   Robin2.bin
+ (5)、update Wifi firmware：  MksWifi.bin
+
+2、V1.0.1 Modifications:
+ (1)、Fix the bug that read Large capacity sd card data error sometimes.
+ (2)、Fix bug with manual shutdown invalid.
+ (3)、Fixed a problem in which the title bar displayed abnormally during printing.
+ (4)、Fixed bug where external drive printing would be skewed.
+ (5)、Fixed a bug where moving too fast when manually leveling.
+
+3、V1.0.2 Modifications:
+ (1)、Fix the bug that read Large capacity sd card data error sometimes.
+ (2)、Fixed a bug that model offset in printingin when connected external motor driver;
+ (3)、Fixed a bug that after the bltouch leveling, the power failure continued print to hang;
