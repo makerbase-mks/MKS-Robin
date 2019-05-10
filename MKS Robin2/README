@@ -18,3 +18,5 @@
  (1)、Fix the bug that read Large capacity sd card data error sometimes.
  (2)、Fixed a bug that model offset in printingin when connected external motor driver;
  (3)、Fixed a bug that after the bltouch leveling, the power failure continued print to hang;
+ 
+ 4、Hardware schematic please see the 'Hardware' folder.
