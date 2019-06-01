@@ -14,3 +14,7 @@ After compiling, there will be robin.bin firmware in the folder(folder path:\.pi
 3.reboot MKS Robin board
 
 4.wait until firmware upgrade is completed
+# Special thanks
+source code from  https://github.com/jmz52/Marlin/tree/MKS-Robin-Touch-POC
+
+Thanks to jmz52 for compatibility with mks robin motherboard based on marlin2.0
