@@ -1,0 +1,14 @@
+---- readBlock Matches (15 in 9 files) ----
+HAL_sdio_STM32F1.cpp (src\hal\hal_stm32f1):bool SDIO_ReadBlock_DMA(uint32_t blockAddress, uint8_t *data) {
+HAL_sdio_STM32F1.cpp (src\hal\hal_stm32f1):bool SDIO_ReadBlock(uint32_t blockAddress, uint8_t *data) {
+HAL_sdio_STM32F1.cpp (src\hal\hal_stm32f1):  while (retries--) if (SDIO_ReadBlock_DMA(blockAddress, data)) return true;
+Sd2Card.cpp (src\sd):bool Sd2Card::readBlock(uint32_t blockNumber, uint8_t* dst) {
+Sd2Card.h (src\sd):  bool readBlock(uint32_t block, uint8_t* dst);
+Sd2Card_FlashDrive.cpp (src\sd\usb_flashdrive):bool Sd2Card::readBlock(uint32_t block, uint8_t* dst) {
+Sd2Card_FlashDrive.h (src\sd\usb_flashdrive):    inline bool readData(uint8_t* dst)                                      { return readBlock(pos++, dst); }
+Sd2Card_FlashDrive.h (src\sd\usb_flashdrive):    bool readBlock(uint32_t block, uint8_t* dst);
+Sd2Card_sdio.h (src\sd):bool SDIO_ReadBlock(uint32_t block, uint8_t *dst);
+Sd2Card_sdio.h (src\sd):    bool readBlock(uint32_t block, uint8_t *dst) { return SDIO_ReadBlock(block, dst); }
+SdBaseFile.cpp (src\sd):      if (!vol_->readBlock(block, dst)) return -1;
+SdVolume.cpp (src\sd):    if (!sdCard_->readBlock(blockNumber, cacheBuffer_.data)) return false;
+SdVolume.h (src\sd):  bool readBlock(uint32_t block, uint8_t* dst) { return sdCard_->readBlock(block, dst); }
