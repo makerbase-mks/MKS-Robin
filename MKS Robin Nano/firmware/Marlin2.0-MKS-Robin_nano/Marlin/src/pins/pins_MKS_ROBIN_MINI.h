@@ -21,18 +21,18 @@
  */
 
 /**
- * MKS Robin nano(STM32F130VET6) board pin assignments
+ * MKS Robin MINI (STM32F130VET6) board pin assignments
  */
 
 #ifndef __STM32F1__
   #error "Oops! Select an STM32F1 board in 'Tools > Board.'"
 #endif
 
-#if HOTENDS > 2 || E_STEPPERS > 2
-  #error "MKS Robin nano supports up to 2 hotends / E-steppers. Comment out this line to continue."
+#if HOTENDS > 1 || E_STEPPERS > 1
+  #error "MKS Robin mini supports up to 1 hotends / E-steppers. Comment out this line to continue."
 #endif
 
-#define BOARD_NAME "MKS Robin nano"
+#define BOARD_NAME "MKS Robin mini"
 
 //
 // Release PB4 (Y_ENABLE_PIN) from JTAG NRST role
@@ -40,17 +40,17 @@
 #define DISABLE_DEBUG
 
 //
-// Note: MKS Robin board is using SPI2 interface.
+// Note: MKS Robin mini board is using SPI2 interface.
 //
 #define SPI_MODULE 2
 
 //
 // Servos
 //
-//#define SERVO0_PIN         -1   // XS1 - 5
-//#define SERVO1_PIN         -1   // XS1 - 6
-//#define SERVO2_PIN         -1   // XS2 - 5
-//#define SERVO3_PIN         -1   // XS2 - 6
+//#define SERVO0_PIN         -1   // 
+//#define SERVO1_PIN         -1   // 
+//#define SERVO2_PIN         -1   // 
+//#define SERVO3_PIN         -1  // 
 
 //
 // Limit Switches
@@ -81,27 +81,27 @@
 #define E0_STEP_PIN        PD6
 #define E0_DIR_PIN         PD3
 
-#define E1_ENABLE_PIN      PA3
-#define E1_STEP_PIN        PA6
-#define E1_DIR_PIN         PA1
+//#define E1_ENABLE_PIN      PA12
+//#define E1_STEP_PIN        PA11
+//#define E1_DIR_PIN         PA8
 
 //
 // Temperature Sensors
 //
 #define TEMP_0_PIN         PC1   // TH1
-#define TEMP_1_PIN         PC2   // TH2
+//#define TEMP_1_PIN         PC2   // TH2
 #define TEMP_BED_PIN       PC0   // TB1
 
 //
 // Heaters / Fans
 //
 #define HEATER_0_PIN       PC3   // HEATER1
-#define HEATER_1_PIN       PB0   // HEATER2
+//#define HEATER_1_PIN       PA6   // HEATER2
 #define HEATER_BED_PIN     PA0   // HOT BED
 
 #define FAN_PIN            PB1   // FAN
 
-#define BTN_ENC            PC13  // Pin is not connected. Real pin is needed to enable encoder's push button functionality used by touch screen
+#define BTN_ENC            PB3  // Pin is not connected. Real pin is needed to enable encoder's push button functionality used by touch screen
 #define BTN_EN1            -1
 #define BTN_EN2            -1
 
@@ -110,7 +110,7 @@
 
 #define POWER_LOSS_PIN     PA2   // PW_DET
 #define PS_ON_PIN          PA3   // PW_OFF
-#define FIL_RUNOUT_PIN     PA4  // MT_DET
+#define FIL_RUNOUT_PIN     PF11  // MT_DET
 
 #define BEEPER_PIN         PC5
 //#define LED_PIN            PB2
@@ -122,12 +122,29 @@
  * Enabling 'LCD_RESET_PIN' causes flickering when entering the LCD menu due to LCD controller reset.
  * Reset feature was designed to "revive the LCD if static electricity killed it."
  */
-//#define LCD_RESET_PIN      PC6
+//#define LCD_RESET_PIN      PF6
 #define LCD_BACKLIGHT_PIN  PD13
 #define FSMC_CS_PIN        PD7  // NE4
 #define FSMC_RS_PIN        PD11   // A0
-#define TOUCH_CS           PA7
+#define TOUCH_CS           PC2
 
 //#define MKS_ROBIN_TFT35     //Uncomment when using the robin tft35 display
 
 #define SD_DETECT_PIN      PD12
+// Motor current PWM pins
+#define MOTOR_CURRENT_PWM_XY_PIN   PA6
+#define MOTOR_CURRENT_PWM_Z_PIN    PA7
+#define MOTOR_CURRENT_PWM_E_PIN    PB0
+#define MOTOR_CURRENT_PWM_RANGE    65535 // (255 * (1000mA / 65535)) * 257 = 1000 is equal 1.6v Vref in turn equal 1Amp
+#define DEFAULT_PWM_MOTOR_CURRENT  {1030, 1030, 1030} // 1.05Amp per driver, here is XY, Z and E. This values determined empirically.
+
+// this is a kind of workaround in case native marlin "digipot" interface won't work, required to uncomment related code in stm32f1/hal.cpp
+//#ifndef MKS_ROBIN_MINI_VREF_PWM
+//  #define MKS_ROBIN_MINI_VREF_PWM
+//#endif
+
+//#define VREF_XY_PIN        PA6
+//#define VREF_Z_PIN         PA7
+//#define VREF_E1_PIN        PB0
+
+

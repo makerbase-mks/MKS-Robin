@@ -894,6 +894,9 @@ void setup() {
     fanmux_init();
   #endif
 
+#if ENABLED(MKS_ROBIN_TFT35)
+  ui.lcd_rest();
+#endif
   ui.init();
   ui.reset_status();
 
