@@ -122,10 +122,12 @@
  * Enabling 'LCD_RESET_PIN' causes flickering when entering the LCD menu due to LCD controller reset.
  * Reset feature was designed to "revive the LCD if static electricity killed it."
  */
-//#define LCD_RESET_PIN      PF6
+//#define LCD_RESET_PIN      PC6
 #define LCD_BACKLIGHT_PIN  PD13
 #define FSMC_CS_PIN        PD7  // NE4
 #define FSMC_RS_PIN        PD11   // A0
 #define TOUCH_CS           PA7
+
+//#define MKS_ROBIN_TFT35     //Uncomment when using the robin tft35 display
 
 #define SD_DETECT_PIN      PD12

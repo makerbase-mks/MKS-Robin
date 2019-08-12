@@ -251,7 +251,9 @@ public:
   // LCD implementations
   static void clear_lcd();
   static void init_lcd();
-
+	#if ENABLED(MKS_ROBIN_TFT35)
+	static void lcd_rest();
+	#endif
   #if HAS_SPI_LCD || ENABLED(MALYAN_LCD) || ENABLED(EXTENSIBLE_UI)
     static void init();
     static void update();

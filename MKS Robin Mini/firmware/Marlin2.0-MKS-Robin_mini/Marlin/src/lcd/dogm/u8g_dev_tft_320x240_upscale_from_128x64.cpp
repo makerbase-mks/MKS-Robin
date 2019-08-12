@@ -82,12 +82,17 @@ static LCD_IO lcd = {0, NULL, NULL, NULL, NULL, NULL, NULL};
 #define WIDTH 128
 #define HEIGHT 64
 #define PAGE_HEIGHT 8
-
+#if ENABLED(MKS_ROBIN_TFT35)
+#define X_MIN (32+80)
+#define Y_MIN (28+40)
+#define X_MAX (X_MIN + 2 * WIDTH  - 1)
+#define Y_MAX (Y_MIN + 2 * HEIGHT - 1)
+#else
 #define X_MIN 32
 #define Y_MIN 28
 #define X_MAX (X_MIN + 2 * WIDTH  - 1)
 #define Y_MAX (Y_MIN + 2 * HEIGHT - 1)
-
+#endif
 static uint32_t lcd_id = 0;
 uint16_t color = 0xFFFF;
 
@@ -134,7 +139,25 @@ static const uint16_t st7789v_init[] = {
   ESC_REG(0x11),
   ESC_END
 };
-
+static const uint16_t ili9488_init[] = {
+  ESC_REG(0x10), ESC_DELAY(10), ESC_REG(0x01), ESC_DELAY(200), ESC_REG(0x11), ESC_DELAY(120),
+  ESC_REG(0x36), 0x0068,
+  ESC_REG(0x3A), 0x0055,
+  ESC_REG(0x2A), 0x0000, 0x0000, 0x0001, 0x00DF,
+  ESC_REG(0x2B), 0x0000, 0x0000, 0x0001, 0x003F,
+  ESC_REG(0xB0), 0x0000, 
+  ESC_REG(0xB1), 0x00B0, 0x0011, 
+  ESC_REG(0xB4), 0x0002, 
+  ESC_REG(0xB6), 0x0002, 0x0042,
+  ESC_REG(0xB7), 0x00C6,
+  ESC_REG(0xC0), 0x0010, 0x0010,
+  ESC_REG(0xC1), 0x0041,
+  ESC_REG(0xC5), 0x0000,0x0022,0x0080,
+  ESC_REG(0xD0), 0x00A4, 0x00A1,
+  ESC_REG(0x29),
+  ESC_REG(0x11),
+  ESC_END
+};
 static const uint16_t ili9328_init[] = {
   ESC_REG(0x0001), 0x0100,
   ESC_REG(0x0002), 0x0400,
@@ -305,7 +328,19 @@ void drawImage(const uint8_t *data, uint16_t length, uint16_t height) {
     lcd.writeSequence(buffer, length << 1);
   }
 }
+#if ENABLED(MKS_ROBIN_TFT35)
+void drawUI(void) {
+  lcd.setWindow(10+80, 170+40, 309+80, 171+40);
+  lcd.writeMultiple(color, 600);
 
+  lcd.setWindow( 20+80, 185+40,  99+80, 224+40);
+  drawImage(button0, 40, 20);
+  lcd.setWindow(120+80, 185+40, 199+80, 224+40);
+  drawImage(button1, 40, 20);
+  lcd.setWindow(220+80, 185+40, 299+80, 224+40);
+  drawImage(button2, 40, 20);
+}
+#else
 void drawUI(void) {
   lcd.setWindow(10, 170, 309, 171);
   lcd.writeMultiple(color, 600);
@@ -317,6 +352,7 @@ void drawUI(void) {
   lcd.setWindow(220, 185, 299, 224);
   drawImage(button2, 40, 20);
 }
+#endif
 
 uint8_t u8g_dev_tft_320x240_upscale_from_128x64_fn(u8g_t *u8g, u8g_dev_t *dev, uint8_t msg, void *arg) {
 #if HAS_COLOR_LEDS && ENABLED(PRINTER_EVENT_LEDS)
@@ -344,6 +380,14 @@ uint8_t u8g_dev_tft_320x240_upscale_from_128x64_fn(u8g_t *u8g, u8g_dev_t *dev, u
         lcd.writeRegister(0x0004);
         lcd.readData(); // dummy read
         lcd.id = ((uint32_t)(lcd.readData() & 0xff) << 16) | ((uint32_t)(lcd.readData() & 0xff) << 8) | (uint32_t)(lcd.readData() & 0xff);
+        #if ENABLED(MKS_ROBIN_TFT35)
+        if(lcd.id != 0x8552)
+        {
+            lcd.writeRegister(0x00d3);
+            lcd.readData(); // dummy read
+            lcd.id = ((uint32_t)(lcd.readData() & 0xff) << 16) | ((uint32_t)(lcd.readData() & 0xff) << 8) | (uint32_t)(lcd.readData() & 0xff);
+        }
+        #endif
         if (lcd_id == 0x040404) { // No connected display on FSMC
           lcd.id = 0;
           return 0;
@@ -361,6 +405,12 @@ uint8_t u8g_dev_tft_320x240_upscale_from_128x64_fn(u8g_t *u8g, u8g_dev_t *dev, u
           writeEscSequence(ili9328_init);
           lcd.setWindow = _setWindow_x20_x21_x22;
           break;
+        #if ENABLED(MKS_ROBIN_TFT35)
+        case 0x9488:
+          writeEscSequence(ili9488_init);
+          lcd.setWindow = _setWindow_x2a_x2b_x2c;            
+          break;
+          #endif
         case 0x0404:  // No connected display on FSMC
           lcd.id = 0;
           return 0;
@@ -374,9 +424,18 @@ uint8_t u8g_dev_tft_320x240_upscale_from_128x64_fn(u8g_t *u8g, u8g_dev_t *dev, u
             lcd.setWindow = _setWindow_x20_x21_x22;
           break;
       }
-
-      lcd.setWindow(0,0,319,239);
-      lcd.writeMultiple(0x0000, 320 * 240);
+      #if ENABLED(MKS_ROBIN_TFT35)
+       if(lcd.id==0x9488)
+       {
+            lcd.setWindow(0,0,479,319);
+            lcd.writeMultiple(0x0000, 480 * 320);       
+       }
+       else
+        #endif
+       {
+            lcd.setWindow(0,0,319,239);
+            lcd.writeMultiple(0x0000, 320 * 240);
+       }
       drawUI();
       break;
 

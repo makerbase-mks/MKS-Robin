@@ -128,6 +128,8 @@
 #define FSMC_RS_PIN        PD11   // A0
 #define TOUCH_CS           PC2
 
+//#define MKS_ROBIN_TFT35     //Uncomment when using the robin tft35 display
+
 #define SD_DETECT_PIN      PD12
 // Motor current PWM pins
 #define MOTOR_CURRENT_PWM_XY_PIN   PA6
