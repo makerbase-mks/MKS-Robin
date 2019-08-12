@@ -21,7 +21,7 @@
  */
 
 /**
- * MKS Robin (STM32F130ZET6) board pin assignments
+ * MKS Robin nano(STM32F130VET6) board pin assignments
  */
 
 #ifndef __STM32F1__
@@ -29,10 +29,10 @@
 #endif
 
 #if HOTENDS > 2 || E_STEPPERS > 2
-  #error "MKS Robin supports up to 2 hotends / E-steppers. Comment out this line to continue."
+  #error "MKS Robin nano supports up to 2 hotends / E-steppers. Comment out this line to continue."
 #endif
 
-#define BOARD_NAME "MKS Robin"
+#define BOARD_NAME "MKS Robin nano"
 
 //
 // Release PB4 (Y_ENABLE_PIN) from JTAG NRST role
@@ -47,43 +47,43 @@
 //
 // Servos
 //
-#define SERVO0_PIN         PC3   // XS1 - 5
-#define SERVO1_PIN         PA1   // XS1 - 6
-#define SERVO2_PIN         PF9   // XS2 - 5
-#define SERVO3_PIN         PF8   // XS2 - 6
+//#define SERVO0_PIN         -1   // XS1 - 5
+//#define SERVO1_PIN         -1   // XS1 - 6
+//#define SERVO2_PIN         -1   // XS2 - 5
+//#define SERVO3_PIN         -1   // XS2 - 6
 
 //
 // Limit Switches
 //
-#define X_MIN_PIN          PB12
-#define X_MAX_PIN          PB0
-#define Y_MIN_PIN          PC5
-#define Y_MAX_PIN          PC4
-#define Z_MIN_PIN          PA4
-#define Z_MAX_PIN          PF7
+#define X_MIN_PIN          PA15
+#define X_MAX_PIN          PA15
+#define Y_MIN_PIN          PA12
+#define Y_MAX_PIN          PA12
+#define Z_MIN_PIN          PA11
+#define Z_MAX_PIN          PC4
 
 //
 // Steppers
 //
-#define X_ENABLE_PIN       PB9
-#define X_STEP_PIN         PB8
-#define X_DIR_PIN          PB5
+#define X_ENABLE_PIN       PE4
+#define X_STEP_PIN         PE3
+#define X_DIR_PIN          PE2
 
-#define Y_ENABLE_PIN       PB4
-#define Y_STEP_PIN         PG15
-#define Y_DIR_PIN          PG10
+#define Y_ENABLE_PIN       PE1
+#define Y_STEP_PIN         PE0
+#define Y_DIR_PIN          PB9
 
-#define Z_ENABLE_PIN       PD7
-#define Z_STEP_PIN         PD3
-#define Z_DIR_PIN          PG14
+#define Z_ENABLE_PIN       PB8
+#define Z_STEP_PIN         PB5
+#define Z_DIR_PIN          PB4
 
-#define E0_ENABLE_PIN      PG13
-#define E0_STEP_PIN        PG8
-#define E0_DIR_PIN         PA15
+#define E0_ENABLE_PIN      PB3
+#define E0_STEP_PIN        PD6
+#define E0_DIR_PIN         PD3
 
-#define E1_ENABLE_PIN      PA12
-#define E1_STEP_PIN        PA11
-#define E1_DIR_PIN         PA8
+#define E1_ENABLE_PIN      PA3
+#define E1_STEP_PIN        PA6
+#define E1_DIR_PIN         PA1
 
 //
 // Temperature Sensors
@@ -95,13 +95,13 @@
 //
 // Heaters / Fans
 //
-#define HEATER_0_PIN       PC7   // HEATER1
-#define HEATER_1_PIN       PA6   // HEATER2
-#define HEATER_BED_PIN     PC6   // HOT BED
+#define HEATER_0_PIN       PC3   // HEATER1
+#define HEATER_1_PIN       PB0   // HEATER2
+#define HEATER_BED_PIN     PA0   // HOT BED
 
-#define FAN_PIN            PA7   // FAN
+#define FAN_PIN            PB1   // FAN
 
-#define BTN_ENC            PB3  // Pin is not connected. Real pin is needed to enable encoder's push button functionality used by touch screen
+#define BTN_ENC            PC13  // Pin is not connected. Real pin is needed to enable encoder's push button functionality used by touch screen
 #define BTN_EN1            -1
 #define BTN_EN2            -1
 
@@ -110,10 +110,10 @@
 
 #define POWER_LOSS_PIN     PA2   // PW_DET
 #define PS_ON_PIN          PA3   // PW_OFF
-#define FIL_RUNOUT_PIN     PF11  // MT_DET
+#define FIL_RUNOUT_PIN     PA4  // MT_DET
 
-#define BEEPER_PIN         PC13
-#define LED_PIN            PB2
+#define BEEPER_PIN         PC5
+//#define LED_PIN            PB2
 
 /**
  * Note: MKS Robin TFT screens may have different TFT controllers
@@ -122,12 +122,12 @@
  * Enabling 'LCD_RESET_PIN' causes flickering when entering the LCD menu due to LCD controller reset.
  * Reset feature was designed to "revive the LCD if static electricity killed it."
  */
-//#define LCD_RESET_PIN      PF6
-#define LCD_BACKLIGHT_PIN  PG11
-#define FSMC_CS_PIN        PG12  // NE4
-#define FSMC_RS_PIN        PF0   // A0
-#define TOUCH_CS           PB1
+//#define LCD_RESET_PIN      PC6
+#define LCD_BACKLIGHT_PIN  PD13
+#define FSMC_CS_PIN        PD7  // NE4
+#define FSMC_RS_PIN        PD11   // A0
+#define TOUCH_CS           PA7
 
 //#define MKS_ROBIN_TFT35     //Uncomment when using the robin tft35 display
 
-#define SD_DETECT_PIN      PF12
+#define SD_DETECT_PIN      PD12

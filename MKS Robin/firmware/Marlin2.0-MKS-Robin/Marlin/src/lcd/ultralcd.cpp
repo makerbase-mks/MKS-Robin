@@ -196,6 +196,17 @@ millis_t next_button_update_ms;
 
 #endif
 
+#if ENABLED(MKS_ROBIN_TFT35)
+void MarlinUI::lcd_rest()
+{
+	OUT_WRITE(PC6, LOW); // perform a clean hardware reset
+	_delay_ms(5);
+	OUT_WRITE(PC6, HIGH);
+	_delay_ms(5); // delay to allow the display to initalize
+	u8g.begin();
+}
+#endif
+
 void MarlinUI::init() {
 
   init_lcd();
