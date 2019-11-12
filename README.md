@@ -44,15 +44,15 @@ Robin V2.0.8
 
 Mks-Robin Mini Firmware version description
 
+1.Initial version
+
 Robin Mini V1.0.0
 
-1.Initial version
+2.Release version
 
 Robin Mini V2.0.7
 
 Robin Mini V2.0.8
-
-1.Release version
 
 # Mks-Robin Lite
 
