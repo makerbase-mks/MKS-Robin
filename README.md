@@ -35,6 +35,7 @@ Robin V1.0.2
 2.Fixed temperature alarm problem during printing.
 
 Robin V2.0.7
+
 Robin V2.0.8
 
 1.Release version
@@ -48,28 +49,37 @@ Robin Mini V1.0.0
 1.Initial version
 
 Robin Mini V2.0.7
+
 Robin Mini V2.0.8
 
 1.Release version
 
 # Mks-Robin Lite
+
 Robin Lite Firmware version description
 
 1.Initial version
+
 Robin Lite V0.0.1
      
 2.Release version
+
 Robin Lite V0.04
 
 # MKS Robin Nano
+
 Robin Nano Firmware version description
 
 1.Initial version
+
 Robin Nano V1.0.0
 
 2.release version
+
 Robin Nano V1.0.1
+
 Robin Nano V1.0.2
+
 Robin Nano V1.0.3
 
 # MKS Robin2
@@ -77,14 +87,19 @@ Robin Nano V1.0.3
 Robin2 Firmware version description
 
 1.Initial version
+
 Robin2 V1.0.0
 
 2.release version
+
 Robin2 V1.0.0
+
 Robin2 V1.0.1
+
 Robin2 V1.0.2
 
  # MKS Robin Nano35
+ 
 Robin Nano35 Firmware version description
 
 1.Initial version
