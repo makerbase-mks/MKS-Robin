@@ -35,6 +35,7 @@ Robin V1.0.2
 2.Fixed temperature alarm problem during printing.
 
 Robin V2.0.7
+Robin V2.0.8
 
 1.Release version
 
@@ -47,44 +48,46 @@ Robin Mini V1.0.0
 1.Initial version
 
 Robin Mini V2.0.7
+Robin Mini V2.0.8
 
 1.Release version
 
 # Mks-Robin Lite
 Robin Lite Firmware version description
 
-Robin Lite V0.0.1
-
 1.Initial version
+Robin Lite V0.0.1
      
+2.Release version
 Robin Lite V0.04
 
-1.Release version
-
 # MKS Robin Nano
-
 Robin Nano Firmware version description
 
+1.Initial version
 Robin Nano V1.0.0
 
-1.Initial version
+2.release version
+Robin Nano V1.0.1
+Robin Nano V1.0.2
+Robin Nano V1.0.3
 
 # MKS Robin2
 
 Robin2 Firmware version description
 
-Robin2 V1.0.0
-
 1.Initial version
-
 Robin2 V1.0.0
 
-1.Modify the function of quick pause and quick stop
+2.release version
+Robin2 V1.0.0
+Robin2 V1.0.1
+Robin2 V1.0.2
 
-2.Fixed a bug that caused the power to hang after the automatic leveling
+ # MKS Robin Nano35
+Robin Nano35 Firmware version description
+1.Initial version
+Robin Nano35 V1.0.3
 
-3.Increase the close motor button in the zero return interface under the classic interface
-
- 
   
   
