@@ -108,5 +108,9 @@ Robin Nano35 Firmware version description
 
 Robin Nano35 V1.0.3
 
+2.release version
+
+Robin Nano35 V1.0.4
+
   
   
