@@ -100,6 +100,8 @@ Robin2 V1.0.1
 
 Robin2 V1.0.2
 
+Robin2 V1.0.3
+
  # MKS Robin Nano35
  
 Robin Nano35 Firmware version description
