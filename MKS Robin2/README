@@ -19,4 +19,16 @@
  (2)、Fixed a bug that model offset in printingin when connected external motor driver;
  (3)、Fixed a bug that after the bltouch leveling, the power failure continued print to hang;
  
+4、V1.0.3 Modifications:
+ (1)、Correct the problem of double limit;
+ (2)、Open pulse hold time configuration item;
+ (3)、Fix the bug that the configuration file is invalid when the pause position is modified;
+ (4)、Fix the material break pause and resume printing misalignment;
+ (5)、Correct the problem that the extrusion head will always heat up when the SD card cannot be read during printing;
+ (6)、Fixed the problem that the interface name is displayed abnormally when the file name exceeds 150 bytes;
+ (7)、Fix the problem that the file name is more than 30 bytes when the power is off and continue to play abnormally;
+ (8)、Correct the problem that the machine stops after the material is cut off when printing the first layer;
+ (9)、Added function: when there is no printing material, a prompt box pops up before printing the file;
+(10)、Corrected the problem of misalignment of printing when heating and cutting the material when executing M109 instruction;
+ 
  4、Hardware schematic please see the 'Hardware' folder.
